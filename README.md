@@ -16,7 +16,7 @@ Some scripts are identical as the original pipeline. here I change some names fo
 
 ### For step-by-step analysis
 
-*Example cmd is presented in the README.md in the step-by-step folder*
+**Example cmd is presented in the README.md in the step-by-step folder**
 
 1. If appliable, run `UMI-tools` or other software or scripts to extract Unique Molecular Index (UMI) before QC.
 2. Run `Cutadapt` to clean the reads, if necessary run `Trimmomatic` for better clean up.
@@ -28,14 +28,14 @@ Some scripts are identical as the original pipeline. here I change some names fo
 8. Repeat 1-8 for multiple samples.
 9. When all pileups formations are done, copy or soft-link the formated pileup files to a new folder.
 10. Prepare a SampleSheet for the samples. Format for each row: Sample[\t]Formated Pileup[\t]gene[\t]3. No empty rows should occur. the `3` here is the `A-cutoff` used, which means that 
-10. Run the `extract_sites.py` script to extract the possible m6Am sites into one CSV file.
+10. Run the `m6A_caller.py` script to extract the possible m6Am sites into one CSV file.
 11. Run the `evaluate_sites.py` script to add the TRUE/FALSE label for the reliability of the sites.
 12. [optional] If you have replicates to merge, prepare another SampleSheet of it. Format is  Merged_name[\t]Sample[\t]Formated Pileup[\t]gene[\t]3. Only the first two columns are useful.
 13. [optional] Run the `merge_replicates.py` script the merge all replicates.
 
 ### For SJM file generator
 
-1. Make sure that you have `SGE`, `SJM` (https://github.com/StanfordBioinformatics/SJM), and `sjm-tools` (https://pypi.org/project/sjm-tools/1.0/) installed. Create a `sjm+` shortcut for `sjm` in /user/bin/ for compatibility.
+1. Make sure that you have `SGE`, `SJM` (https://github.com/StanfordBioinformatics/SJM), and `sjm-tools` (https://pypi.org/project/sjm-tools/1.0/) installed. Create a `sjm+` shortcut for `sjm` in `/usr/bin/` for compatibility.
 2. Configure the environment variables in the python script.
 3. Prepare SampleSheet, you may need to modify the python script to specify the content.
 4. Run the python script with your SampleSheet.
