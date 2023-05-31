@@ -6,7 +6,7 @@ This pipeline is also suitable for eTAM. However, for eTAM, it supposes to use m
 
 Some scripts are identical as the original pipeline. here I change some names for better understanding what they are for.
 
-## Usage:
+## Usage
 
 ### Preparation
 
