@@ -16,7 +16,7 @@ Some scripts are identical as the original pipeline. here I change some names fo
 
 ### For step-by-step analysis
 
-**Example cmd is presented in the README.md in the step-by-step folder**
+**Example cmd is presented in the README.md in the `notebook` folder**
 
 1. If appliable, run `UMI-tools` or other software or scripts to extract Unique Molecular Index (UMI) before QC.
 2. Run `Cutadapt` to clean the reads, if necessary run `Trimmomatic` for better clean up.
@@ -33,7 +33,7 @@ Some scripts are identical as the original pipeline. here I change some names fo
 12. [optional] If you have replicates to merge, prepare another SampleSheet of it. Format is  Merged_name[\t]Sample[\t]Formated Pileup[\t]gene[\t]3. Only the first two columns are useful.
 13. [optional] Run the `merge_replicates.py` script the merge all replicates.
 
-### For SJM file generator
+### For SJM file generator (pending)
 
 1. Make sure that you have `SGE`, `SJM` (https://github.com/StanfordBioinformatics/SJM), and `sjm-tools` (https://pypi.org/project/sjm-tools/1.0/) installed. Create a `sjm+` shortcut for `sjm` in `/usr/bin/` for compatibility.
 2. Configure the environment variables in the python script.
@@ -41,12 +41,3 @@ Some scripts are identical as the original pipeline. here I change some names fo
 4. Run the python script with your SampleSheet.
 5. Wait for the alignment and pileup results.
 6. Analyze the pileups according to the step-by-step manual.
-
-### For Jupyter Notebook (pending)
-
-1. Make sure that you have `Jupyter-notebook` installed and well configured.
-2. Configure the environment variables in the `GLORI_alignment_and_pileup.ipynb`.
-3. Run the `GLORI_alignment_and_pileup.ipynb` notebook and wait for the results.
-4. Copy-and-pase, or create short-cuts for the pileups in a new folder, copy the `GLORI_analysis.ipynb` notebook into the folder.
-5. Configure and run the `GLORI_analysis.ipynb` notebook.
-
